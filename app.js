@@ -48,13 +48,15 @@ if (navigator.requestMIDIAccess) {
 
 function onMIDISuccess(midiAccess) {
     const inputs = midiAccess.inputs;
+    const bulb = document.getElementById('midi-bulb');
     
-    if (inputs.size === 0) {
-        console.log('No MIDI inputs found. Connect your OTG/USB device.');
-        document.querySelector('.text span').innerText = 'disconnected';
-    } else {
+    // Initial check
+    if (inputs.size > 0) {
         console.log('MIDI inputs found.');
-        document.querySelector('.text span').innerText = 'connected';
+        bulb.classList.add('connected');
+    } else {
+        console.log('No MIDI inputs found.');
+        bulb.classList.remove('connected');
     }
 
     // Listen to all inputs
@@ -65,7 +67,16 @@ function onMIDISuccess(midiAccess) {
     // Handle connection changes
     midiAccess.onstatechange = (e) => {
         console.log('Connection status changed:', e.port.state);
-        document.querySelector('.text span').innerText = e.port.state === 'connected' ? 'connected' : 'disconnected';
+        if (e.port.state === 'connected' && e.port.type === 'input') {
+             bulb.classList.add('connected');
+        } else if (e.port.state === 'disconnected' && e.port.type === 'input') {
+             // Only turn off if no other inputs are present (simple check: if inputs.size is 0, but inputs map updates async)
+             // For simplicity, we just check the event state.
+             // Ideally we re-scan inputs, but this is usually sufficient for single device use.
+             if (midiAccess.inputs.size === 0) {
+                bulb.classList.remove('connected');
+             }
+        }
     };
 }
 
