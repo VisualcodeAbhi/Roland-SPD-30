@@ -9,15 +9,18 @@ const sounds = {}; // Store loaded buffers: { noteNumber: buffer }
 // USER CONFIGURATION: Map Pads to Sound Files
 // Put your audio files in the "sounds" folder.
 // Filenames must match exactly!
+// USER CONFIGURATION: Map Pads to Sound Files
+// Put your audio files in the "sounds" folder.
+// Filenames must match exactly!
 const soundFiles = {
-    'pad-1': 'sounds/Tabala&dholak/Vrb_Clp1.wav', // Change 'kick.wav' to your file
-    'pad-2': 'sounds/Tabla&dholak/Chap_1.wav',  // Change 'snare.wav' to your file
-    'pad-3': 'sounds/Tabala&dholak/mixed_Duff.wav',  // ...
-    'pad-4': 'sounds/Tabla&dholak/Inst_1dagga.wav',
-    'pad-5': 'sounds/Tabla&dholak/dolak_080.wav',
+    'pad-1': 'sounds/Tabala&dholak/Vrb_Clp1.wav', // Folder is named 'Tabala&dholak'
+    'pad-2': 'sounds/Tabala&dholak/Chap_1.wav',
+    'pad-3': 'sounds/Tabala&dholak/mixed_Duff.wav',
+    'pad-4': 'sounds/Tabala&dholak/Inst _dagga .wav', // Note the spaces in this filename
+    'pad-5': 'sounds/Tabala&dholak/dolak_080.wav',
     'pad-6': 'sounds/Tabala&dholak/Real_dolak.wav',
-    'pad-7': 'sounds/',
-    'pad-8': ''
+    'pad-7': '', // File 'Inst_2dagga.wav' not found in folder
+    'pad-8': ''  // File 'Inst_3dagga.wav' not found in folder
 };
 
 const padMapping = {
