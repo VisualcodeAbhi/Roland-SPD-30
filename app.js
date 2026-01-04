@@ -11,12 +11,12 @@ const sounds = {}; // Store loaded buffers: { noteNumber: buffer }
 // Filenames must match exactly!
 const soundFiles = {
     'pad-1': 'sounds/Tabala&dholak/Vrb_Clp1.wav', // Change 'kick.wav' to your file
-    'pad-2': 'sounds/snare.wav',  // Change 'snare.wav' to your file
-    'pad-3': 'sounds/hihat.wav',  // ...
-    'pad-4': 'sounds/tom1.wav',
-    'pad-5': 'sounds/tom2.wav',
-    'pad-6': 'sounds/crash.wav',
-    'pad-7': 'sounds/ride.wav',
+    'pad-2': 'sounds/Tabla&dholak/Chap_1.wav',  // Change 'snare.wav' to your file
+    'pad-3': 'sounds/Tabala&dholak/mixed_Duff.wav',  // ...
+    'pad-4': 'sounds/Tabla&dholak/Inst_1dagga.wav',
+    'pad-5': 'sounds/Tabla&dholak/dolak_080.wav',
+    'pad-6': 'sounds/Tabala&dholak/Real_dolak.wav',
+    'pad-7': 'sounds/',
     'pad-8': ''
 };
 

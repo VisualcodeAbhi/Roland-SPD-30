@@ -12,49 +12,114 @@
 }
 
 
-.card {
+.control-panel {
   width: 100%;
   background-color: black;
   color: white;
   border: none;
-  height: 8rem;
+  /* Increase height to fit clean vertical layout */
+  height: auto;
+  min-height: 250px;
+  padding: 20px 0;
   box-shadow: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  flex-direction: row;
-
-  margin-bottom: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.card .btn {
-  background-color: rgb(242, 183, 183);
-  color: black;
+/* MIDI Bulb Section */
+.midi-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.btn {
-  width: 5rem;
-  text-align: center;
-  height: 2rem;
-  margin: -10px;
-  text-align: center;
-  /* font-size: 1rem; */
+.bulb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  /* Default OFF state */
+  border: 2px solid #555;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+
+  /* Simple CSS Bulb Shape using pseudo-element for the base */
+  position: relative;
+}
+
+.bulb::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 6px;
+  background-color: #555;
+  border-radius: 2px;
+}
+
+.bulb.connected {
+  background-color: #00ff00;
+  /* Green ON state */
+  box-shadow: 0 0 15px #00ff00, inset 0 0 10px white;
+  border-color: #00ff00;
+}
+
+.label {
+  font-size: 1rem;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* Kit Display Screen */
 .screen {
-  width: 100px;
-  height: 6rem;
-  background-color: rgb(98, 208, 168);
-  color: black;
-  text-align: center;
-  line-height: 6rem;
-  margin-right: 10px;
-  margin-left: 10px;
+  width: 80%;
+  height: 5rem;
+  background-color: #484c7f;
+  /* Muted purple/blue from image */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 10px 0;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.text {
-  transform: rotate(270deg);
+/* Control Buttons */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 60%;
+}
+
+.control-btn {
+  width: 100%;
+  background-color: #484c7f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.control-btn:active {
+  background-color: #6a6ea8;
+  transform: scale(0.98);
 }
 
 .pad {
