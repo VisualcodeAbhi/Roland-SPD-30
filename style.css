@@ -1,0 +1,78 @@
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+
+.card {
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: none;
+  height: 8rem;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+  margin-bottom: 10px;
+}
+
+.card .btn {
+  background-color: rgb(242, 183, 183);
+  color: black;
+}
+
+.btn {
+  width: 5rem;
+  text-align: center;
+  height: 2rem;
+  margin: -10px;
+  text-align: center;
+  /* font-size: 1rem; */
+  font-weight: bold;
+}
+
+.screen {
+  width: 100px;
+  height: 6rem;
+  background-color: rgb(98, 208, 168);
+  color: black;
+  text-align: center;
+  line-height: 6rem;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.text {
+  transform: rotate(270deg);
+}
+
+.pad {
+  width: 100%;
+  background-color: black;
+  /* color: white; */
+  /* border: none; */
+  height: 9rem;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: background-color 0.1s ease-out, transform 0.05s ease-out;
+}
+
+.pad.active {
+  background-color: #0d6efd;
+  /* Bootstrap primary blue, adjust to neon later if needed */
+  box-shadow: 0 0 20px rgba(13, 110, 253, 0.8);
+  transform: scale(0.98);
+  transition: none;
+  /* Instant on */
+}
